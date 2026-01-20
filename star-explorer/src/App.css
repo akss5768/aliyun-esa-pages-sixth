@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c1e 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e0e0e0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 背景星星 */
+.background-star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 标题 */
+.title {
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 20px rgba(164, 211, 238, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.title p {
+  font-size: 1.2rem;
+  color: #8899aa;
+  letter-spacing: 0.1em;
+}
+
+/* 主内容区域 */
+.main-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+}
+
+/* 星座列表 */
+.constellation-list {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.constellation-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #a4d3ee;
+  text-align: center;
+}
+
+.constellation-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.constellation-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.constellation-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(164, 211, 238, 0.3);
+}
+
+.constellation-item.active {
+  background: rgba(164, 211, 238, 0.15);
+  border-color: rgba(164, 211, 238, 0.5);
+}
+
+.constellation-icon {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.constellation-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.constellation-info p {
+  font-size: 0.9rem;
+  color: #8899aa;
+}
+
+/* 星星展示区 */
+.star-display {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.star-display h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #a4d3ee;
+  text-align: center;
+}
+
+.stars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.star-card {
+  position: relative;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.star-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--star-glow, rgba(164, 211, 238, 0.1)) 0%,
+    transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.star-card:hover::before {
+  opacity: 1;
+}
+
+.star-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--star-color, #a4d3ee);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.star-card.selected {
+  border-color: var(--star-color, #a4d3ee);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.star-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--star-color) 0%, transparent 70%);
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.star-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.star-constellation {
+  font-size: 0.9rem;
+  color: #8899aa;
+  text-align: center;
+}
+
+.brightness-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--star-color, #a4d3ee);
+  border-radius: 0 0 16px 16px;
+}
+
+/* 星星详情面板 */
+.star-detail {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: linear-gradient(135deg, rgba(28, 28, 46, 0.95), rgba(22, 33, 62, 0.95));
+  border: 1px solid rgba(164, 211, 238, 0.3);
+  border-radius: 20px 20px 0 0;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.detail-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--star-color) 0%, transparent 70%);
+  font-size: 3rem;
+  color: white;
+}
+
+.star-detail h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.info-item .label {
+  font-size: 0.85rem;
+  color: #8899aa;
+}
+
+.info-item .value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* 星座详情面板 */
+.constellation-detail {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background: linear-gradient(135deg, rgba(28, 28, 46, 0.95), rgba(22, 33, 62, 0.95));
+  border: 1px solid rgba(164, 211, 238, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.constellation-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.constellation-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c0c0c0;
+  text-align: center;
+  font-style: italic;
+}
+
+.detail-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.detail-item .item-label {
+  font-size: 0.85rem;
+  color: #8899aa;
+}
+
+.detail-item .item-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffd700;
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+  .stars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .star-detail,
+  .constellation-detail {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .detail-items {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "stars": [
+    {
+      "id": 1,
+      "name": "天狼星",
+      "constellation": "大犬座",
+      "distance": 8.6,
+      "brightness": -1.46,
+      "type": "蓝矮星",
+      "mass": 2.02,
+      "temperature": 9940,
+      "age": 242000000,
+      "color": "#a4d3ee"
+    },
+    {
+      "id": 2,
+      "name": "参宿四",
+      "constellation": "猎户座",
+      "distance": 642.5,
+      "brightness": 0.50,
+      "type": "红超巨星",
+      "mass": 16.5,
+      "temperature": 3500,
+      "age": 10000000,
+      "color": "#ff6b35"
+    },
+    {
+      "id": 3,
+      "name": "北极星",
+      "constellation": "小熊座",
+      "distance": 433,
+      "brightness": 1.98,
+      "type": "黄超巨星",
+      "mass": 5.4,
+      "temperature": 6015,
+      "age": 70000000,
+      "color": "#ffd700"
+    },
+    {
+      "id": 4,
+      "name": "织女星",
+      "constellation": "天琴座",
+      "distance": 25,
+      "brightness": 0.03,
+      "type": "蓝矮星",
+      "mass": 2.1,
+      "temperature": 9602,
+      "age": 455000000,
+      "color": "#add8e6"
+    },
+    {
+      "id": 5,
+      "name": "心宿二",
+      "constellation": "天蝎座",
+      "distance": 550,
+      "brightness": 0.96,
+      "type": "红超巨星",
+      "mass": 12,
+      "temperature": 3500,
+      "age": 12000000,
+      "color": "#dc143c"
+    },
+    {
+      "id": 6,
+      "name": "牛郎星",
+      "constellation": "天鹰座",
+      "distance": 16.7,
+      "brightness": 0.77,
+      "type": "白矮星",
+      "mass": 1.79,
+      "temperature": 7550,
+      "age": 1000000000,
+      "color": "#fffaf0"
+    },
+    {
+      "id": 7,
+      "name": "角宿一",
+      "constellation": "室女座",
+      "distance": 260,
+      "brightness": 0.97,
+      "type": "蓝巨星",
+      "mass": 11.43,
+      "temperature": 22400,
+      "age": 400000000,
+      "color": "#87cefa"
+    },
+    {
+      "id": 8,
+      "name": "老人星",
+      "constellation": "船底座",
+      "distance": 310,
+      "brightness": -0.74,
+      "type": "白巨星",
+      "mass": 8.5,
+      "temperature": 7350,
+      "age": 45000000,
+      "color": "#fff8dc"
+    }
+  ],
+  "constellations": [
+    {
+      "id": 1,
+      "name": "大犬座",
+      "season": "冬季",
+      "mainStar": "天狼星",
+      "starsCount": 8,
+      "story": "大犬座是希腊神话中的猎犬，跟随猎户座在夜空中奔跑。",
+      "bestViewMonth": 2
+    },
+    {
+      "id": 2,
+      "name": "猎户座",
+      "season": "冬季",
+      "mainStar": "参宿七",
+      "starsCount": 10,
+      "story": "猎户座是最壮观的星座之一，代表希腊神话中的猎人俄里翁。",
+      "bestViewMonth": 1
+    },
+    {
+      "id": 3,
+      "name": "小熊座",
+      "season": "全年",
+      "mainStar": "北极星",
+      "starsCount": 7,
+      "story": "小熊座包含著名的北极星，是航海者的重要指引。",
+      "bestViewMonth": 6
+    },
+    {
+      "id": 4,
+      "name": "天琴座",
+      "season": "夏季",
+      "mainStar": "织女星",
+      "starsCount": 6,
+      "story": "天琴座代表音乐之神俄耳甫斯的竖琴。",
+      "bestViewMonth": 8
+    },
+    {
+      "id": 5,
+      "name": "天蝎座",
+      "season": "夏季",
+      "mainStar": "心宿二",
+      "starsCount": 9,
+      "story": "天蝎座是希腊神话中杀死猎户座的毒蝎。",
+      "bestViewMonth": 7
+    },
+    {
+      "id": 6,
+      "name": "天鹰座",
+      "season": "秋季",
+      "mainStar": "牛郎星",
+      "starsCount": 5,
+      "story": "天鹰座是宙斯的宠物鹰，曾为宙斯带来闪电。",
+      "bestViewMonth": 9
+    }
+  ]
+}

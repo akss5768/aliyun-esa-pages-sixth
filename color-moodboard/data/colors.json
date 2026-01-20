@@ -1,0 +1,40 @@
+{
+  "colorPalettes": [
+    {
+      "id": 1,
+      "name": "晨曦",
+      "mood": "温暖、希望",
+      "colors": ["#FFE5B4", "#FFB6C1", "#FFA07A", "#FF7F50", "#FF6347"]
+    },
+    {
+      "id": 2,
+      "name": "海洋",
+      "mood": "平静、深邃",
+      "colors": ["#E0F7FA", "#B2EBF2", "#80DEEA", "#4DD0E1", "#00BCD4"]
+    },
+    {
+      "id": 3,
+      "name": "森林",
+      "mood": "自然、生机",
+      "colors": ["#E8F5E9", "#C8E6C9", "#A5D6A7", "#81C784", "#66BB6A"]
+    },
+    {
+      "id": 4,
+      "name": "暮色",
+      "mood": "浪漫、神秘",
+      "colors": ["#F3E5F5", "#E1BEE7", "#CE93D8", "#BA68C8", "#9C27B0"]
+    },
+    {
+      "id": 5,
+      "name": "沙漠",
+      "mood": "温暖、宁静",
+      "colors": ["#FFF8E1", "#FFECB3", "#FFE082", "#FFD54F", "#FFCA28"]
+    },
+    {
+      "id": 6,
+      "name": "星空",
+      "mood": "梦幻、宁静",
+      "colors": ["#E3F2FD", "#BBDEFB", "#90CAF9", "#64B5F6", "#42A5F5"]
+    }
+  ]
+}

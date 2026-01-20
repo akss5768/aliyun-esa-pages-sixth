@@ -1,0 +1,155 @@
+{
+  "fonts": [
+    {
+      "id": 1,
+      "name": "Helvetica",
+      "family": "Helvetica, Arial, sans-serif",
+      "category": "无衬线",
+      "year": 1957,
+      "designer": "Max Miedinger & Eduard Hoffmann",
+      "description": "Helvetica是最著名的无衬线字体之一，以其简洁、现代和中性而闻名。广泛应用于标志、排版和品牌设计中。",
+      "usage": "标志设计、标题、正文排版",
+      "characteristics": "简洁、中性、易读性强",
+      "mood": "现代、专业、可信",
+      "famous": "NASA、BMW、American Airlines",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 2,
+      "name": "Garamond",
+      "family": "'Garamond', 'Times New Roman', serif",
+      "category": "衬线",
+      "year": 1530,
+      "designer": "Claude Garamond",
+      "description": "Garamond是最经典的老式衬线字体之一，具有优雅、传统和文学气息。常用于书籍出版和精致设计。",
+      "usage": "书籍正文、文学作品、优雅标题",
+      "characteristics": "优雅、传统、文学气息",
+      "mood": "经典、优雅、学术",
+      "famous": "Adobe、Apple、Victoria's Secret",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 3,
+      "name": "Futura",
+      "family": "'Futura', 'Arial', sans-serif",
+      "category": "无衬线",
+      "year": 1927,
+      "designer": "Paul Renner",
+      "description": "Futura是几何无衬线字体的代表，具有现代感、科技感和未来主义风格。常用于时尚和科技品牌。",
+      "usage": "时尚品牌、科技产品、海报设计",
+      "characteristics": "几何、现代、简洁",
+      "mood": "未来、科技、前卫",
+      "famous": "Volkswagen、Supreme、Louis Vuitton",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 4,
+      "name": "Bodoni",
+      "family": "'Bodoni', 'Didot', serif",
+      "category": "衬线",
+      "year": 1798,
+      "designer": "Giovanni Battista Bodoni",
+      "categoryCN": "过渡时期衬线",
+      "description": "Bodoni是现代衬线字体的经典之作，以其强烈的对比和优雅的曲线著称。常用于时尚杂志和奢华品牌。",
+      "usage": "时尚杂志、奢侈品广告、标题设计",
+      "characteristics": "高对比、优雅、精致",
+      "mood": "奢华、时尚、戏剧",
+      "famous": "Vogue、Chanel、Gucci",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 5,
+      "name": "Comic Sans",
+      "family": "'Comic Sans MS', cursive",
+      "category": "手写",
+      "year": 1994,
+      "designer": "Vincent Connare",
+      "description": "Comic Sans是最受争议的字体之一，具有亲切、随意和童趣的特点。适合非正式场合和儿童内容。",
+      "usage": "儿童内容、非正式文档、趣味设计",
+      "characteristics": "随意、亲切、童趣",
+      "mood": "轻松、友好、随意",
+      "famous": "非正式文档、儿童教育",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 6,
+      "name": "Courier",
+      "family": "'Courier New', monospace",
+      "category": "等宽",
+      "year": 1955,
+      "designer": "Howard Kettler",
+      "description": "Courier是最经典的等宽字体，模仿打字机样式。常用于代码展示、剧本写作和正式文档。",
+      "usage": "代码编辑、剧本写作、正式文档",
+      "characteristics": "等宽、功能性、机械感",
+      "mood": "实用、技术、正式",
+      "famous": "代码编辑器、剧本格式",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 7,
+      "name": "Palatino",
+      "family": "'Palatino', 'Georgia', serif",
+      "category": "衬线",
+      "year": 1948,
+      "designer": "Hermann Zapf",
+      "description": "Palatino是一种优雅的老式衬线字体，具有温暖和人文气息。广泛用于书籍、杂志和海报设计。",
+      "usage": "书籍排版、杂志设计、优雅标题",
+      "characteristics": "温暖、优雅、人文",
+      "mood": "优雅、亲切、学术",
+      "famous": "《美丽心灵》海报、多种出版物",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    },
+    {
+      "id": 8,
+      "name": "Didot",
+      "family": "'Didot', 'Bodoni', serif",
+      "category": "衬线",
+      "year": 1784,
+      "designer": "Firmin Didot",
+      "description": "Didot是法国的经典衬线字体，以其极高的对比度和精致的细节著称。是时尚杂志的首选字体。",
+      "usage": "时尚杂志、奢侈品品牌、高端设计",
+      "characteristics": "高对比、精致、时尚",
+      "mood": "奢华、优雅、法式",
+      "famous": "Harper's Bazaar、Vogue France",
+      "sample": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789"
+    }
+  ],
+  "principles": [
+    {
+      "id": 1,
+      "name": "对比度",
+      "description": "通过大小、粗细、颜色或字体的对比来创造视觉层次和重点。",
+      "example": "大标题 vs 小正文"
+    },
+    {
+      "id": 2,
+      "name": "对齐",
+      "description": "确保所有元素都有清晰的视觉连接，左对齐、右对齐或居中对齐。",
+      "example": "保持所有文本左对齐创造整洁外观"
+    },
+    {
+      "id": 3,
+      "name": "重复",
+      "description": "在整个设计中重复使用某些元素以保持一致性和统一性。",
+      "example": "整个文档使用相同的字体样式"
+    },
+    {
+      "id": 4,
+      "name": "亲密性",
+      "description": "相关的元素应该靠在一起，不相关的元素应该分开。",
+      "example": "标题与其对应的正文应该靠近"
+    },
+    {
+      "id": 5,
+      "name": "留白",
+      "description": "合理运用留白来增加设计的呼吸感和可读性。",
+      "example": "在段落之间增加适当的间距"
+    },
+    {
+      "id": 6,
+      "name": "层次",
+      "description": "通过大小、粗细和位置的差异来建立视觉层次，引导读者视线。",
+      "example": "使用H1、H2、H3建立信息层级"
+    }
+  ]
+}
