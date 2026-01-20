@@ -1,0 +1,30 @@
+作品访问地址:
+https://star-explorer.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/star-explorer
+
+
+作品说明:
+# 星空探索者 - 宇宙星空风
+
+星空探索者 是一个天文知识展示项目，采用宇宙星空风格设计。用户可以浏览星座信息，了解天文学知识。
+
+## 功能特性
+
+- **星座展示** - 展示不同星座的位置和连线
+- **天文知识** - 提供星座和星体的详细介绍
+- **星空导航** - 交互式星空导航功能
+- **天文事件** - 显示重要的天文现象信息
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Canvas的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **渲染引擎**: Canvas API
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

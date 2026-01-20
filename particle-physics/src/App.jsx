@@ -53,12 +53,12 @@ const App = () => {
         return newParticle;
       }));
 
-      if (isSimulating) {
-        requestRef.current = requestAnimationFrame(draw);
-      }
+      requestRef.current = requestAnimationFrame(draw);
     };
 
-    draw();
+    if (isSimulating) {
+      draw();
+    }
 
     return () => {
       if (requestRef.current) {

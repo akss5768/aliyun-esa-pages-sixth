@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
@@ -18,7 +18,7 @@ const App = () => {
       });
   }, []);
 
-  const generateBackgroundStars = () => {
+  const backgroundStars = useMemo(() => {
     return Array.from({ length: 200 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -27,9 +27,7 @@ const App = () => {
       delay: Math.random() * 5,
       duration: Math.random() * 3 + 2
     }));
-  };
-
-  const backgroundStars = generateBackgroundStars();
+  }, []);
 
   return (
     <div className="app">

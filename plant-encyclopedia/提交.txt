@@ -1,0 +1,30 @@
+作品访问地址:
+https://plant-encyclopedia.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/plant-encyclopedia
+
+
+作品说明:
+# 植物百科全书 - 自然清新风
+
+植物百科全书 是一个植物信息展示项目，采用自然清新风格设计。用户可以浏览各种植物的详细信息，了解养护知识。
+
+## 功能特性
+
+- **植物分类** - 按照不同类型分类植物
+- **植物详情** - 查看植物详细介绍、产地、生长习性等信息
+- **养护贴士** - 提供植物养护技巧和建议
+- **视觉展示** - 直观的植物形态展示
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Framer Motion的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **动画库**: Framer Motion
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

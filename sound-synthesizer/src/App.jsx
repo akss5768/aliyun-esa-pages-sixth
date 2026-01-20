@@ -9,9 +9,10 @@ const App = () => {
   const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9', '#F8B500', '#00CED1'];
 
   const playNote = (note, color) => {
-    setActiveNotes([...activeNotes, { note, color, id: Date.now() }]);
+    const noteId = Date.now();
+    setActiveNotes([...activeNotes, { note, color, id: noteId }]);
     setTimeout(() => {
-      setActiveNotes(prev => prev.filter(n => n.id !== Date.now()));
+      setActiveNotes(prev => prev.filter(n => n.id !== noteId));
     }, 500);
   };
 

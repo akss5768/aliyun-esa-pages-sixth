@@ -1,0 +1,30 @@
+作品访问地址:
+https://city-explorer.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/city-explorer
+
+
+作品说明:
+# 世界城市探索 - 地图交互风
+
+世界城市探索 是一个城市信息展示项目，采用地图交互风格设计。用户可以浏览全球主要城市的详细信息，包括人口、时区、气候等。
+
+## 功能特性
+
+- **洲际筛选** - 按照不同大洲筛选城市
+- **城市详情** - 查看城市详细介绍、人口、时区、货币等信息
+- **实时时间** - 显示各城市实时时间
+- **地标展示** - 展示城市著名地标建筑
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Framer Motion的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **动画库**: Framer Motion
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

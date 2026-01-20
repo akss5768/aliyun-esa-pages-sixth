@@ -177,7 +177,7 @@ const App = () => {
               exit={{ opacity: 0, scale: 0.8, y: 50 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button className="close-btn" onClick={() => setSelectedFont(null)}>+</button>
+              <button className="close-btn" onClick={() => setSelectedFont(null)}>✕</button>
 
               <div className="modal-header" style={{ fontFamily: selectedFont.family }}>
                 <h1 className="modal-title">{selectedFont.name}</h1>

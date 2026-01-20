@@ -1,0 +1,30 @@
+作品访问地址:
+https://color-moodboard.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/color-moodboard
+
+
+作品说明:
+# 色彩情绪板 - 柔和渐变风
+
+色彩情绪板 是一个色彩搭配展示项目，采用柔和渐变风格设计。用户可以浏览各种色彩搭配方案，了解每种颜色的情绪表达。
+
+## 功能特性
+
+- **色彩分类** - 按照不同情绪和场景分类色彩搭配
+- **色彩详情** - 查看详细的色彩搭配信息和情绪描述
+- **复制功能** - 一键复制色彩代码
+- **视觉展示** - 直观的色彩搭配展示
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Framer Motion的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **动画库**: Framer Motion
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

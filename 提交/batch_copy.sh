@@ -23,7 +23,7 @@ count_skip=0
 count_error=0
 
 # 遍历项目根目录下的所有子文件夹
-for dir in "${PROJECT_ROOT}"/U-*/; do
+for dir in "${PROJECT_ROOT}"/*/; do
     # 检查目录是否存在
     if [ ! -d "$dir" ]; then
         continue

@@ -1,0 +1,30 @@
+作品访问地址:
+https://sound-synthesizer.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/sound-synthesizer
+
+
+作品说明:
+# 音乐合成器 - 音乐律动风
+
+音乐合成器 是一个音乐合成展示项目，采用音乐律动风格设计。用户可以演奏虚拟键盘，体验不同音符的合成效果。
+
+## 功能特性
+
+- **虚拟键盘** - 提供直观的虚拟钢琴键盘
+- **音效合成** - 实现音乐音效的实时合成
+- **键盘控制** - 支持电脑键盘快捷键演奏
+- **视觉反馈** - 键盘按压时的视觉反馈效果
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Web Audio API的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **音频API**: Web Audio API
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

@@ -29,9 +29,17 @@ const App = () => {
 
   const getLocalTime = (timezone) => {
     const now = new Date();
-    const offset = parseInt(timezone.replace('UTC', '').replace('+', '')) || 0;
-    const sign = timezone.includes('+') ? 1 : -1;
-    const localTime = new Date(now.getTime() + offset * 3600000 * sign);
+    // 解析时区偏移量，如 UTC+8, UTC-5
+    const match = timezone.match(/UTC([+-])(\d+)/);
+    if (!match) return now.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+    
+    const sign = match[1] === '+' ? 1 : -1;
+    const offset = parseInt(match[2]) * sign;
+    
+    // 获取UTC时间并加上偏移量
+    const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const localTime = new Date(utcTime + (offset * 3600000));
+    
     return localTime.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
   };
 

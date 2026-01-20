@@ -30,7 +30,7 @@ const App = () => {
       <header className="header">
         <div className="film-strip" />
         <h1>🎬 电影时光机</h1>
-        <p class="subtitle">穿越电影史，重温经典时刻</p>
+        <p className="subtitle">穿越电影史，重温经典时刻</p>
         <div className="film-strip" />
       </header>
 

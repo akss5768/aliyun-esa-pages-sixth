@@ -1,0 +1,30 @@
+作品访问地址:
+https://typography-art.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/typography-art
+
+
+作品说明:
+# 字体艺术展 - 排版艺术风
+
+字体艺术展 是一个字体和排版展示项目，采用排版艺术风格设计。用户可以浏览各种字体样式，了解排版美学。
+
+## 功能特性
+
+- **字体分类** - 按照不同风格分类字体
+- **排版展示** - 展示不同排版样式的视觉效果
+- **样式调节** - 调节字体大小、间距、颜色等参数
+- **排版预设** - 提供多种经典排版预设
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Framer Motion的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **动画库**: Framer Motion
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

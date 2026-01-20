@@ -1,0 +1,29 @@
+作品访问地址:
+https://cinema-timemachine.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/cinema-timemachine
+
+
+作品说明:
+# 电影时光机 - 影院复古风
+
+电影时光机 是一个电影主题的展示项目，采用影院复古风格设计。用户可以浏览不同年代的经典电影，查看电影信息和获奖记录。
+
+## 功能特性
+
+- **年代筛选** - 按照不同年代筛选电影
+- **电影详情** - 查看电影详细介绍、导演、评分等信息
+- **视觉特效** - 复胶片颗粒、暗角等复古视觉效果
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Framer Motion的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **动画库**: Framer Motion
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+

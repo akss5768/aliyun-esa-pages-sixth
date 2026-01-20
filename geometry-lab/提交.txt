@@ -1,0 +1,30 @@
+作品访问地址:
+https://geometry-lab.195b8e46.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-sixth/tree/main/geometry-lab
+
+
+作品说明:
+# 数学几何实验室 - 几何抽象风
+
+数学几何实验室 是一个几何图形展示项目，采用几何抽象风格设计。用户可以学习各种几何图形和数学定理，了解它们的性质和公式。
+
+## 功能特性
+
+- **图形分类** - 按照不同类型分类几何图形
+- **定理展示** - 展示重要几何定理和公式
+- **图形演示** - 可视化展示几何图形特征
+- **公式展示** - 提供面积、周长等计算公式
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Framer Motion的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **动画库**: Framer Motion
+- **UI样式**: CSS Modules
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **环境**: Node.js 18+
