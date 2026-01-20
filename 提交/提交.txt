@@ -1,0 +1,30 @@
+作品访问地址:
+https://u-sample.5e61f340.er.aliyun-esa.net/
+
+github仓库地址:
+https://github.com/akss5768/aliyun-esa-pages-fourth/tree/main/U-Sample
+
+
+作品说明:
+# U-Search 聚合搜索引擎
+
+U-Search 是一个聚合搜索引擎项目，支持多个搜索引擎的聚合搜索功能。用户可以在一个界面中同时搜索多个搜索引擎，并保存搜索历史记录。
+
+## 功能特性
+
+- **聚合搜索** - 支持多个搜索引擎的统一搜索界面
+- **历史记录** - 使用localStorage保存搜索历史，方便回顾
+- **设置选项** - 个性化配置搜索偏好
+- **响应式设计** - 完美适配桌面、平板和手机设备
+- **轻量级** - 基于React和Tailwind CSS的轻量级实现
+
+## 技术栈
+
+- **前端框架**: React 18
+- **路由**: React Router
+- **UI样式**: Tailwind CSS 3.4.19 (低于4.0)
+- **状态管理**: React Hooks
+- **数据存储**: LocalStorage
+- **构建工具**: Vite
+- **UI组件库**: Ant Design
+- **环境**: Node.js 18+
