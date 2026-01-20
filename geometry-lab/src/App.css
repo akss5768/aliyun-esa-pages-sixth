@@ -165,21 +165,67 @@ body {
   display: inline-block;
 }
 
+/* 模态框遮罩层 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* 拖动提示 */
+.drag-hint {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drag-hint::before {
+  content: '⋮⋮';
+  font-size: 1.2rem;
+  letter-spacing: -2px;
+}
+
 /* 图形详情 */
 .shape-detail {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 600px;
+  /* 确保完全居中，左右边距一致 */
+  margin-left: calc(var(--modal-width, 90%) / -2);
+  margin-top: calc(var(--modal-max-height, 800px) / -2);
+  width: var(--modal-width, 90%);
+  max-width: 700px;
+  max-height: var(--modal-max-height, 800px);
+  overflow-y: auto;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
-  padding: 2rem;
+  padding: var(--modal-padding, 2rem);
   color: #2c3e50;
   z-index: 1000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.shape-detail:active,
+.shape-detail[style*="grabbing"] {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 .close-btn {
@@ -197,6 +243,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .close-btn:hover {
@@ -217,7 +264,7 @@ body {
 }
 
 .shape-detail h2 {
-  font-size: 2rem;
+  font-size: var(--font-size-title, 2rem);
   text-align: center;
   margin-bottom: 1rem;
   color: var(--shape-color, #667eea);
@@ -225,7 +272,7 @@ body {
 
 .shape-description {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--font-size-body, 1.1rem);
   line-height: 1.6;
   color: #5a6c7d;
   margin-bottom: 1.5rem;
@@ -254,7 +301,7 @@ body {
 }
 
 .formula-value {
-  font-size: 1rem;
+  font-size: var(--font-size-formula, 1rem);
   font-weight: 600;
   color: #2c3e50;
   font-family: 'Courier New', monospace;
@@ -338,16 +385,27 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 700px;
+  /* 确保完全居中，左右边距一致 */
+  margin-left: calc(var(--modal-width, 90%) / -2);
+  margin-top: calc(var(--modal-max-height, 800px) / -2);
+  width: var(--modal-width, 90%);
+  max-width: 800px;
+  max-height: var(--modal-max-height, 800px);
+  overflow-y: auto;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
-  padding: 2rem;
+  padding: var(--modal-padding, 2rem);
   color: #2c3e50;
   z-index: 1000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.theorem-detail:active,
+.theorem-detail[style*="grabbing"] {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 .theorem-detail-header {
@@ -358,13 +416,13 @@ body {
 }
 
 .theorem-detail-header h2 {
-  font-size: 2rem;
+  font-size: var(--font-size-title, 2rem);
   margin-bottom: 1rem;
   color: var(--theorem-color, #667eea);
 }
 
 .theorem-formula-large {
-  font-size: 2.5rem;
+  font-size: calc(var(--font-size-title, 2rem) * 1.25);
   font-family: 'Courier New', monospace;
   color: var(--theorem-color, #667eea);
   display: inline-block;
@@ -398,6 +456,7 @@ body {
 .example-section p {
   line-height: 1.7;
   color: #5a6c7d;
+  font-size: var(--font-size-body, 1.1rem);
 }
 
 /* 控制面板 */
@@ -459,9 +518,27 @@ body {
   .shape-formulas {
     grid-template-columns: 1fr;
   }
+}
 
-  .theorem-formula-large {
-    font-size: 1.8rem;
-    padding: 0.8rem 1.5rem;
-  }
+/* 滚动条美化 */
+.shape-detail::-webkit-scrollbar,
+.theorem-detail::-webkit-scrollbar {
+  width: 8px;
+}
+
+.shape-detail::-webkit-scrollbar-track,
+.theorem-detail::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.shape-detail::-webkit-scrollbar-thumb,
+.theorem-detail::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 4px;
+}
+
+.shape-detail::-webkit-scrollbar-thumb:hover,
+.theorem-detail::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
 }
