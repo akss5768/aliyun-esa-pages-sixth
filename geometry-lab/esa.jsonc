@@ -1,0 +1,8 @@
+{
+    "name": "几何实验室",
+    "installCommand": "npm install",
+    "assets": {
+        "directory": "./dist",
+        "notFoundStrategy": "singlePageApplication"
+    }
+}

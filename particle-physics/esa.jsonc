@@ -1,0 +1,8 @@
+{
+    "name": "粒子物理模拟器",
+    "installCommand": "npm install",
+    "assets": {
+        "directory": "./dist",
+        "notFoundStrategy": "singlePageApplication"
+    }
+}
