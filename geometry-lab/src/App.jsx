@@ -1,29 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
-
-// 拖动hook
-const useDraggable = (initialPosition = { x: 0, y: 0 }) => {
-  const position = useMotionValue(initialPosition.x);
-  const yPosition = useMotionValue(initialPosition.y);
-
-  const handleDrag = (event, info) => {
-    position.set(info.point.x - initialPosition.x);
-    yPosition.set(info.point.y - initialPosition.y);
-  };
-
-  const resetPosition = () => {
-    position.set(initialPosition.x);
-    yPosition.set(initialPosition.y);
-  };
-
-  return {
-    x: position,
-    y: yPosition,
-    onDrag: handleDrag,
-    resetPosition
-  };
-};
 
 const App = () => {
   const [shapes, setShapes] = useState([]);
@@ -35,16 +12,6 @@ const App = () => {
   const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
   const canvasRef = useRef(null);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragOffset = useRef({ x: 0, y: 0 });
-  const shapeDetailRef = useRef(null);
-  const theoremDetailRef = useRef(null);
-
-  // 拖动状态
-  const [shapeDragPosition, setShapeDragPosition] = useState({ x: 0, y: 0 });
-  const [theoremDragPosition, setTheoremDragPosition] = useState({ x: 0, y: 0 });
-  const [isShapeDraggable, setIsShapeDraggable] = useState(false);
-  const [isTheoremDraggable, setIsTheoremDraggable] = useState(false);
 
   // 监听窗口大小变化
   useEffect(() => {
@@ -58,31 +25,6 @@ const App = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  // 拖动处理函数
-  const handleDragStart = (e, type) => {
-    if (type === 'shape') {
-      setIsShapeDraggable(true);
-    } else {
-      setIsTheoremDraggable(true);
-    }
-  };
-
-  const handleDrag = (e, info, type) => {
-    if (type === 'shape') {
-      setShapeDragPosition({ x: info.delta.x + shapeDragPosition.x, y: info.delta.y + shapeDragPosition.y });
-    } else {
-      setTheoremDragPosition({ x: info.delta.x + theoremDragPosition.x, y: info.delta.y + theoremDragPosition.y });
-    }
-  };
-
-  const handleDragEnd = (type) => {
-    if (type === 'shape') {
-      setIsShapeDraggable(false);
-    } else {
-      setIsTheoremDraggable(false);
-    }
-  };
 
   // 动态计算浮层样式
   const modalStyles = useMemo(() => {
@@ -123,17 +65,11 @@ const App = () => {
     // 计算最大高度，留出边距
     const maxHeight = Math.min(height * 0.9, 800);
 
-    // 计算左右边距（确保左右对称）
-    const horizontalMargin = (width - modalWidth) / 2;
-    const bottomMargin = (height - maxHeight) / 2;
-
     return {
       width: `${modalWidth}px`,
       padding: modalPadding,
       maxHeight,
-      fontSize: modalFontSize,
-      horizontalMargin,
-      bottomMargin
+      fontSize: modalFontSize
     };
   }, [windowSize]);
 
@@ -380,13 +316,10 @@ const App = () => {
                 />
                 <motion.div
                   className="shape-detail"
-                  ref={shapeDetailRef}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{
                     opacity: 1,
-                    scale: 1,
-                    x: shapeDragPosition.x,
-                    y: shapeDragPosition.y
+                    scale: 1
                   }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{
@@ -395,22 +328,6 @@ const App = () => {
                     stiffness: 300,
                     damping: 25
                   }}
-                  drag
-                  dragConstraints={{
-                    left: -modalStyles.horizontalMargin,
-                    right: modalStyles.horizontalMargin,
-                    top: -modalStyles.bottomMargin,
-                    bottom: modalStyles.bottomMargin
-                  }}
-                  dragElastic={0.15}
-                  dragMomentum={true}
-                  dragTransition={{
-                    power: 0.25,
-                    timeConstant: 200
-                  }}
-                  onDragStart={() => handleDragStart(null, 'shape')}
-                  onDrag={(e, info) => handleDrag(e, info, 'shape')}
-                  onDragEnd={() => handleDragEnd('shape')}
                   style={{
                     '--shape-color': selectedShape.color,
                     '--modal-width': modalStyles.width,
@@ -418,13 +335,10 @@ const App = () => {
                     '--modal-max-height': `${modalStyles.maxHeight}px`,
                     '--font-size-title': modalStyles.fontSize.title,
                     '--font-size-body': modalStyles.fontSize.body,
-                    '--font-size-formula': modalStyles.fontSize.formula,
-                    cursor: isShapeDraggable ? 'grabbing' : 'grab'
+                    '--font-size-formula': modalStyles.fontSize.formula
                   }}
-                  layout
                 >
                 <button className="close-btn" onClick={() => setSelectedShape(null)}>✕</button>
-                <div className="drag-hint">可拖动</div>
                 <div className="shape-canvas-container">
                   <canvas
                     ref={canvasRef}
@@ -502,13 +416,10 @@ const App = () => {
                 />
                 <motion.div
                   className="theorem-detail"
-                  ref={theoremDetailRef}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{
                     opacity: 1,
-                    scale: 1,
-                    x: theoremDragPosition.x,
-                    y: theoremDragPosition.y
+                    scale: 1
                   }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{
@@ -517,22 +428,6 @@ const App = () => {
                     stiffness: 300,
                     damping: 25
                   }}
-                  drag
-                  dragConstraints={{
-                    left: -modalStyles.horizontalMargin,
-                    right: modalStyles.horizontalMargin,
-                    top: -modalStyles.bottomMargin,
-                    bottom: modalStyles.bottomMargin
-                  }}
-                  dragElastic={0.15}
-                  dragMomentum={true}
-                  dragTransition={{
-                    power: 0.25,
-                    timeConstant: 200
-                  }}
-                  onDragStart={() => handleDragStart(null, 'theorem')}
-                  onDrag={(e, info) => handleDrag(e, info, 'theorem')}
-                  onDragEnd={() => handleDragEnd('theorem')}
                   style={{
                     '--theorem-color': selectedTheorem.color,
                     '--modal-width': modalStyles.width,
@@ -540,13 +435,10 @@ const App = () => {
                     '--modal-max-height': `${modalStyles.maxHeight}px`,
                     '--font-size-title': modalStyles.fontSize.title,
                     '--font-size-body': modalStyles.fontSize.body,
-                    '--font-size-formula': modalStyles.fontSize.formula,
-                    cursor: isTheoremDraggable ? 'grabbing' : 'grab'
+                    '--font-size-formula': modalStyles.fontSize.formula
                   }}
-                  layout
                 >
                 <button className="close-btn" onClick={() => setSelectedTheorem(null)}>✕</button>
-                <div className="drag-hint">可拖动</div>
                 <div className="theorem-detail-header">
                   <h2>{selectedTheorem.name}</h2>
                   <div className="theorem-formula-large">

@@ -177,29 +177,6 @@ body {
   cursor: pointer;
 }
 
-/* 拖动提示 */
-.drag-hint {
-  position: absolute;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.05);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: #7f8c8d;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.drag-hint::before {
-  content: '⋮⋮';
-  font-size: 1.2rem;
-  letter-spacing: -2px;
-}
-
 /* 图形详情 */
 .shape-detail {
   position: fixed;
@@ -219,13 +196,6 @@ body {
   z-index: 1000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
-  user-select: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.shape-detail:active,
-.shape-detail[style*="grabbing"] {
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 .close-btn {
@@ -399,13 +369,6 @@ body {
   z-index: 1000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
-  user-select: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.theorem-detail:active,
-.theorem-detail[style*="grabbing"] {
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 .theorem-detail-header {
